@@ -1,7 +1,7 @@
 let search;
 let playerArray = [];
-const searchContainerEl = $(); // need direction from html
-const playerEl = $(); // need direction from html
+const searchContainerEl = $(/*need direction from html*/); 
+const playerEl = $(/*need direction from html*/);
 
 // Getting the data info from Free NBA API, and display it
 const playerSearch = (searchTerm) => {
@@ -9,7 +9,7 @@ const playerSearch = (searchTerm) => {
         url: "https://free-nba.p.rapidapi.com/players/%7Bid%7D"+searchTerm,
         method: "GET"
     }).then(function(response){
-        let searchResultEl = $('#search-results');
+        let searchResultEl = $(/*need direction from html*/); 
         playerArray = response.player;
 
         // Display player info
@@ -21,7 +21,7 @@ const playerSearch = (searchTerm) => {
 
         if (playerArray === null) {
             const searchFailedMsg = $('<p>').text('Sorry, no results were found. Try another search.');
-            $('#search-results').append(searchFailedMsg);
+            $(/*need direction from html */).append(searchFailedMsg);
         } else {
             displaySearchHistory(searchTerm);
             const historyElement = document.querySelector('[data-search="' + searchTerm + '"]');
