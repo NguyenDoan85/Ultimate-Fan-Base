@@ -20,7 +20,7 @@ const playerSearch = (searchTerm) => {
         // Get a reference to the search history element for this search
 
         if (playerArray === null) {
-            const searchFailedMsg = $('<p>').text('Sorry, no results were found. Try another search.');
+            const searchFailedMsg = $('<p>').text('No results found. Try another search!');
             $(/*need direction from html */).append(searchFailedMsg);
         } else {
             displaySearchHistory(searchTerm);
